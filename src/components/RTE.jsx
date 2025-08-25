@@ -1,7 +1,7 @@
 import React from "react";
 import {Editor} from '@tinymce/tinymce-react'
 import {Controller} from 'react-hook-form'
-
+import conf from '../conf/conf'
 
 export default function RTE({name,control,label, defaultValue=""}){ // control converts this RTE components into form & changes state,  we pass this control when we want to use RTE & we get constrol from react hook form
     
@@ -13,7 +13,7 @@ export default function RTE({name,control,label, defaultValue=""}){ // control c
                 control={control} // control gives control of child's fields like variable and props to the parent
                 render={({field:{onChange}})=>(
                     <Editor 
-                    apiKey='q7ep8ywfmfr3a4m5w9h72mzrkeagf2khoujy1oufzqgbs3so'
+                    apiKey = {conf.tinymceapikey}
                     initialValue={defaultValue}
                     init={{
                         height:500,
